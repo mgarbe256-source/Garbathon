@@ -40,6 +40,14 @@ Confirmed correct by the user on 2026-08-11 — this is the real numbering.
 1. `fa3a320e-ad62-4ae6-ba5f-58832a3e1d62` — original assembly; teleport-in and teleport-out both silent (`kling3_0` generated with `sound: "off"`)
 2. `0e130563-94f6-4fa3-a4f5-df624920ab26` — **current final** — regenerated both teleport clips with `sound: "on"` and a whoosh-of-air audio prompt, spliced around the original (untouched) dialogue segment
 
+## Title / graphic assets
+
+Non-scene assets kept for later use in the final edit.
+
+| What | File | Notes |
+|---|---|---|
+| "Where's Richard?" title card | `title-images/wheres-richard-title.png` | User-made in Gemini (not Higgsfield), since repeated Higgsfield attempts (`soul_2`, `nano_banana_flash`, `seedream_v4_5`) kept either cropping Richard, losing his likeness entirely when Ilana was added as a second reference element, or replacing him with a generic Waldo. User supplied this finished version directly on 2026-08-11 — saved as-is, to be used as a title/intro card later in the edit. |
+
 ## Experiments / alternates (not scene finals)
 
 Not part of the numbered scene sequence — side comparisons kept here so the links
