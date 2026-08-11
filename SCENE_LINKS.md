@@ -5,13 +5,28 @@ uploaded media assets (built by concatenating individual generated clips with ff
 then uploaded to Higgsfield) — they are **not** Higgsfield generations, so they won't
 appear in a generation history/gallery. Bookmark this file, or use the links directly.
 
+## Confirmed scenes
+
 | Scene | Link | Notes |
 |---|---|---|
-| Scene 1 | https://d2ol7oe51mr4n9.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/6fc59d66-bba7-4e20-b3e2-56846fbdbcdd.mp4 | **Unconfirmed** — inferred from upload metadata (1280x720, 25.6s, latest of a revision cluster). Not visually verified. |
-| Scene 2 | https://d2ol7oe51mr4n9.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/fa3a320e-ad62-4ae6-ba5f-58832a3e1d62.mp4 | **Unconfirmed** — inferred from upload metadata (1280x720, 20.8s, latest of a revision cluster). Not visually verified. |
-| Scene 3 | https://d2ol7oe51mr4n9.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/c9579552-9b5a-4a0f-90eb-9073056c8c11.mp4 | **Confirmed final** — kitchen→golf course, teleport-in, 4 dialogue close-ups, raven teleport-out. Cindy's line uses direct clone TTS (seed_audio), full line captured at 6s duration. |
+| Kitchen scene | https://d2ol7oe51mr4n9.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/fa3a320e-ad62-4ae6-ba5f-58832a3e1d62.mp4 | Confirmed as the final upload in this scene's revision cluster (verified against generation history timestamps). **Not yet visually confirmed by the user.** Numbering (Scene 1 vs Scene 2) unresolved — see below. |
+| Golf course scene | https://d2ol7oe51mr4n9.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/c9579552-9b5a-4a0f-90eb-9073056c8c11.mp4 | **Confirmed final.** Teleport-in, 4 dialogue close-ups, raven teleport-out. Cindy's line uses direct clone TTS (seed_audio). |
 
-## Revision history (Scene 3)
+## Open question: scene numbering
+
+Searched the full video generation history back to its start (no earlier results) —
+the only multi-clip productions featuring Steve, Michael, Cindy, and Debbie together
+are the kitchen scene and the golf course scene. A third candidate (four friends
+walking down a country road, raven-transitioning to an Italian restaurant) was
+confirmed by the user to be **just a test**, not a real scene, and is excluded here.
+
+So either:
+- The kitchen scene is actually "Scene 1" and the golf course is "Scene 2", or
+- A true Scene 1 hasn't been produced yet.
+
+Update this file once the user clarifies.
+
+## Revision history (golf course scene)
 
 For reference, in case a later revision needs to roll back or reuse an intermediate:
 
