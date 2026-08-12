@@ -71,13 +71,15 @@ Confirmed correct by the user on 2026-08-11 — this is the real numbering.
 
 **Dialogue video clips — attempt 4 (wrong, not used):** Cindy `66e125ad...`, Michael `12733092...` — used elements Cindy-Confirmed and Michael-Arborist. User reported both still wrong. Superseded by attempt 5 below.
 
-**Dialogue video clips — attempt 5 (Cindy + Michael only, current):**
-7. Cindy — `5932622f-10c9-40be-b170-852edcb26168` — https://d8j0ntlcm91z4.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/hf_20260812_021440_5932622f-10c9-40be-b170-852edcb26168.mp4
-10. Michael — `46743959-8301-47ea-963d-6e7cd0cd4a59` — https://d8j0ntlcm91z4.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/hf_20260812_021440_46743959-8301-47ea-963d-6e7cd0cd4a59.mp4
+**Dialogue video clips — attempt 5 (wrong, not used):** Cindy `5932622f...`, Michael `46743959...`. Per user's explicit instruction, used elements **Cindy-2-Ref** and **Michael1** — Michael's face was acceptable this time ("will do") but his outfit and background were generic/random instead of matching the actual scene (root cause: the `nsfw`-moderation dodge forced a plain "standing outdoors" prompt with no scene-specific detail). Cindy's face was still wrong. Superseded by attempt 6 below.
 
-Per user's explicit instruction, switched to two other specific existing elements: Cindy's close-up (`c75e5ce8...`) used element **Cindy-2-Ref** (`2c413b97-a21b-46f4-939a-47651b18cfbf`); Michael's close-up (`eb4c9c3f...`) used element **Michael1** (`dc054a58-467c-4599-8ad7-0d25a0b56235`) — Michael's first two prompt attempts (with "flashy clothing"/"mouth slightly open" phrasing) were flagged `nsfw` by moderation and had to be simplified to a plain "portrait photo, smiling, standing outdoors" prompt before it would generate. Not yet visually confirmed by the user.
+**Dialogue video clips — attempt 6 (Cindy + Michael only, current):**
+7. Cindy — `322e01df-0e90-4346-9c54-30443561293c` — https://d8j0ntlcm91z4.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/hf_20260812_023047_322e01df-0e90-4346-9c54-30443561293c.mp4
+10. Michael — `429fe422-50bd-49e8-949c-b0118b0edb8e` — https://d8j0ntlcm91z4.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/hf_20260812_023047_429fe422-50bd-49e8-949c-b0118b0edb8e.mp4
 
-**Scene 4 dialogue — final set to use:** Cindy `66e125ad...` (attempt 4), Debbie `a99efb3b...` (attempt 3), Steve `2bab12ce...` (attempt 3), Michael `12733092...` (attempt 4).
+Fixed differently for each: **Michael** — kept his accepted face (element Michael1) but fixed continuity by editing his actual group-photo crop (`1ffe23d3...`, correct flashy outfit + real hotel background from this scene) with `nano_banana_pro`, "change only his face to match <<<Michael1>>>", instead of generating a fresh portrait from scratch (result: `d5cc8e79...`). **Cindy** — the old Cindy Soul used in Scene 3 (`109038a8...`) no longer exists in the workspace ("Character not found"), so instead of guessing another named asset, extracted an actual frame of her confirmed Scene 3 dialogue close-up directly from the real Scene 3 video (`84a34caf...` at 10s) via `ffmpeg`, uploaded it, and saved it as a new reference element **Cindy-Scene3-True** (`d414403b-db95-4959-b654-be9638f5d450`) — ground truth rather than a named guess. Applied the same "edit face onto the real crop" technique as Michael: `nano_banana_pro` on her group-photo crop (`719972ac...`) with "edit this photo so the woman's face matches <<<Cindy-Scene3-True>>>, keep clothing/pose/background the same" (result: `abdf5ed2...`; first attempt at this edit failed outright, second hung indefinitely and was abandoned, third succeeded). Not yet visually confirmed by the user.
+
+**Scene 4 dialogue — final set to use:** Cindy `322e01df...` (attempt 6), Debbie `a99efb3b...` (attempt 3), Steve `2bab12ce...` (attempt 3), Michael `429fe422...` (attempt 6).
 
 **Scene 4 status:** all component clips built (teleport-in, 4 dialogue, transformation, blast-off) — not yet assembled into one final sequence.
 - User will record reference audio (for emotion/intonation) before the four dialogue clips are generated.
