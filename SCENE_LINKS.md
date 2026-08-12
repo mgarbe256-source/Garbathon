@@ -69,11 +69,13 @@ Confirmed correct by the user on 2026-08-11 — this is the real numbering.
 7. Cindy — `fd106e02-fa90-4405-aa21-f0dfbae27f3c` — **WRONG, not used.** User reported face still not good and mouth not lip-synced to the audio despite Soul generation. Superseded by attempt 4 below.
 10. Michael — `503dbe1a-2576-4a4d-b041-bfb2a6ac031e` — **WRONG, not used — serious failure.** Soul generation (soul `1d71accb...`) rendered Michael as a different person of a different race entirely, despite using his correct, established soul_id. Superseded by attempt 4 below.
 
-**Dialogue video clips — attempt 4 (Cindy + Michael only, current):**
-7. Cindy — `66e125ad-0f1a-47ea-852d-17ba3a66b789` — https://d8j0ntlcm91z4.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/hf_20260812_020439_66e125ad-0f1a-47ea-852d-17ba3a66b789.mp4
-10. Michael — `12733092-3c5a-4b70-9765-2bd23f5aa65a` — https://d8j0ntlcm91z4.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/hf_20260812_020440_12733092-3c5a-4b70-9765-2bd23f5aa65a.mp4
+**Dialogue video clips — attempt 4 (wrong, not used):** Cindy `66e125ad...`, Michael `12733092...` — used elements Cindy-Confirmed and Michael-Arborist. User reported both still wrong. Superseded by attempt 5 below.
 
-Switched from Soul generation to embedding a previously human-confirmed real reference photo via `show_reference_elements` + `nano_banana_pro` (`<<<element_id>>>` in the prompt) — a fundamentally different, more reliable identity source than the learned Soul that failed for Michael. Cindy's close-up (`ee483223...`) used element **Cindy-Confirmed** (`d9d569fe-3464-4175-9cba-19c10b3381f9`); Michael's close-up (`9f15b1e9...`) used element **Michael-Arborist** (`cd90f8bb-0a64-4f6f-8f5b-d1c486b632ab`), the same technique that reliably fixed face issues elsewhere in this project. Not yet visually confirmed by the user — verify carefully given the severity of the prior Michael failure.
+**Dialogue video clips — attempt 5 (Cindy + Michael only, current):**
+7. Cindy — `5932622f-10c9-40be-b170-852edcb26168` — https://d8j0ntlcm91z4.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/hf_20260812_021440_5932622f-10c9-40be-b170-852edcb26168.mp4
+10. Michael — `46743959-8301-47ea-963d-6e7cd0cd4a59` — https://d8j0ntlcm91z4.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/hf_20260812_021440_46743959-8301-47ea-963d-6e7cd0cd4a59.mp4
+
+Per user's explicit instruction, switched to two other specific existing elements: Cindy's close-up (`c75e5ce8...`) used element **Cindy-2-Ref** (`2c413b97-a21b-46f4-939a-47651b18cfbf`); Michael's close-up (`eb4c9c3f...`) used element **Michael1** (`dc054a58-467c-4599-8ad7-0d25a0b56235`) — Michael's first two prompt attempts (with "flashy clothing"/"mouth slightly open" phrasing) were flagged `nsfw` by moderation and had to be simplified to a plain "portrait photo, smiling, standing outdoors" prompt before it would generate. Not yet visually confirmed by the user.
 
 **Scene 4 dialogue — final set to use:** Cindy `66e125ad...` (attempt 4), Debbie `a99efb3b...` (attempt 3), Steve `2bab12ce...` (attempt 3), Michael `12733092...` (attempt 4).
 
