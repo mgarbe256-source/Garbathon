@@ -73,3 +73,33 @@ the Higgsfield app to free the capped slot; new clone **Cindy-Voice-2**
 (`28d6f3c4-28cb-4a88-aa66-468312e60d27`) created from that video and confirmed
 `completed`/`is_audio_eligible`. **Use this voice_id for all future Cindy
 generations — the old `62792e14...` id no longer exists.**
+
+## Cindy Soul retrain — in progress (2026-08-12)
+
+Even with the voice fixed, Cindy's face in the Scene 4 dialogue close-up
+remained wrong, and using her real confirmed photo directly as `start_image`
+also broke lip-sync (mouth not moving with audio). User supplied two new
+reference images (a close-up portrait and a 5-view turnaround sheet,
+recovered from the session transcript, staged via GitHub, cropped into 5
+individual angle images in the Higgsfield sandbox) to retrain the Cindy Soul
+from scratch.
+
+All 6 images are uploaded and confirmed in the Higgsfield media library:
+
+| Image | media_id |
+|---|---|
+| Portrait | `dfe5147e-f885-48c6-8754-b1fa6b2a418c` |
+| Turnaround angle 0 | `e56780dd-95b8-4862-ae2c-920dae922a8d` |
+| Turnaround angle 1 | `6bcfdd37-297d-43f3-95d3-0256a0392731` |
+| Turnaround angle 2 | `90960a73-cfbf-4fce-95f9-b0c476f58331` |
+| Turnaround angle 3 | `3ee4041c-7f8a-4cea-8083-39af40af39ca` |
+| Turnaround angle 4 | `25cb850e-7d99-4ab4-9da6-d23b7d543541` |
+
+`show_characters(action='train', ...)` failed repeatedly ("Something went
+wrong") on 2026-08-12 across 6 attempts with varied inputs (media_id array,
+https URL array, `medias` array, different character names, fewer images) —
+while `list`, `balance`, and `media_confirm` all worked normally in between.
+This points to a transient outage in the Soul-training endpoint itself, not
+a problem with the images. **Next step: retry `show_characters(action='train',
+name=..., images=[the 6 media_ids above])` once the endpoint recovers** — no
+need to re-upload anything.
