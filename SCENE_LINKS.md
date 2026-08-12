@@ -63,13 +63,19 @@ Confirmed correct by the user on 2026-08-11 — this is the real numbering.
 
 **Dialogue video clips — attempt 2 (wrong, not used):** `edfff56d...`, `b904e71a...`, `19032942...`, `44282a09...` — close-up framing was right, but `nano_banana_pro` cropping individual people out of the 4-person group composite lost/scrambled facial identity (user reported the "Debbie" clip actually showed Cindy) and `wan2_7` produced static, non-moving mouths on these degraded source images. Superseded by attempt 3 below; do not use.
 
-**Dialogue video clips — attempt 3 (current):**
-7. Cindy — `fd106e02-fa90-4405-aa21-f0dfbae27f3c` — https://d8j0ntlcm91z4.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/hf_20260812_015343_fd106e02-fa90-4405-aa21-f0dfbae27f3c.mp4
-8. Debbie — `a99efb3b-4793-4fa2-87b1-fb2d3e70cab9` — https://d8j0ntlcm91z4.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/hf_20260812_015343_a99efb3b-4793-4fa2-87b1-fb2d3e70cab9.mp4
-9. Steve — `2bab12ce-653f-4a95-9b02-525b60512ed0` — https://d8j0ntlcm91z4.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/hf_20260812_015343_2bab12ce-653f-4a95-9b02-525b60512ed0.mp4
-10. Michael — `503dbe1a-2576-4a4d-b041-bfb2a6ac031e` — https://d8j0ntlcm91z4.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/hf_20260812_015343_503dbe1a-2576-4a4d-b041-bfb2a6ac031e.mp4
+**Dialogue video clips — attempt 3:** built via close-ups generated directly from each character's trained Soul (`soul_2` + soul_id) instead of cropping the group photo.
+8. Debbie — `a99efb3b-4793-4fa2-87b1-fb2d3e70cab9` — https://d8j0ntlcm91z4.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/hf_20260812_015343_a99efb3b-4793-4fa2-87b1-fb2d3e70cab9.mp4 — **CONFIRMED GOOD by user.** Close-up source `100dfd02...` (soul `52c6956c...`).
+9. Steve — `2bab12ce-653f-4a95-9b02-525b60512ed0` — https://d8j0ntlcm91z4.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/hf_20260812_015343_2bab12ce-653f-4a95-9b02-525b60512ed0.mp4 — **CONFIRMED GOOD by user.** Close-up source `1a52b6cd...` (soul `00ee0321...`).
+7. Cindy — `fd106e02-fa90-4405-aa21-f0dfbae27f3c` — **WRONG, not used.** User reported face still not good and mouth not lip-synced to the audio despite Soul generation. Superseded by attempt 4 below.
+10. Michael — `503dbe1a-2576-4a4d-b041-bfb2a6ac031e` — **WRONG, not used — serious failure.** Soul generation (soul `1d71accb...`) rendered Michael as a different person of a different race entirely, despite using his correct, established soul_id. Superseded by attempt 4 below.
 
-Fixed by generating each close-up directly from the character's trained Soul (`soul_2` + soul_id) instead of cropping the group photo — guarantees correct identity, matching the reliable method used elsewhere in this project. Close-up source images: Cindy `202b1c6d...` (soul `d0bd9737...` Cindy-2), Debbie `100dfd02...` (soul `52c6956c...`), Steve `1a52b6cd...` (soul `00ee0321...`), Michael `9898e89a...` (soul `1d71accb...`). Cindy and Debbie's faces spot-checked and confirmed as visually distinct correct identities. Each `wan2_7` clip built from its close-up as start_image + the character's voice-converted audio as `audio_references`. 16:9, durations 4/4/5/7s. Not yet visually confirmed by the user.
+**Dialogue video clips — attempt 4 (Cindy + Michael only, current):**
+7. Cindy — `66e125ad-0f1a-47ea-852d-17ba3a66b789` — https://d8j0ntlcm91z4.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/hf_20260812_020439_66e125ad-0f1a-47ea-852d-17ba3a66b789.mp4
+10. Michael — `12733092-3c5a-4b70-9765-2bd23f5aa65a` — https://d8j0ntlcm91z4.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/hf_20260812_020440_12733092-3c5a-4b70-9765-2bd23f5aa65a.mp4
+
+Switched from Soul generation to embedding a previously human-confirmed real reference photo via `show_reference_elements` + `nano_banana_pro` (`<<<element_id>>>` in the prompt) — a fundamentally different, more reliable identity source than the learned Soul that failed for Michael. Cindy's close-up (`ee483223...`) used element **Cindy-Confirmed** (`d9d569fe-3464-4175-9cba-19c10b3381f9`); Michael's close-up (`9f15b1e9...`) used element **Michael-Arborist** (`cd90f8bb-0a64-4f6f-8f5b-d1c486b632ab`), the same technique that reliably fixed face issues elsewhere in this project. Not yet visually confirmed by the user — verify carefully given the severity of the prior Michael failure.
+
+**Scene 4 dialogue — final set to use:** Cindy `66e125ad...` (attempt 4), Debbie `a99efb3b...` (attempt 3), Steve `2bab12ce...` (attempt 3), Michael `12733092...` (attempt 4).
 
 **Scene 4 status:** all component clips built (teleport-in, 4 dialogue, transformation, blast-off) — not yet assembled into one final sequence.
 - User will record reference audio (for emotion/intonation) before the four dialogue clips are generated.
