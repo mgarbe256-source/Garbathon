@@ -115,9 +115,15 @@ Same image (`42b7c05b...`) as attempt 9, now paired with the new-voice-clone aud
 **Dialogue video clips — attempt 11 (Cindy only, current):**
 7. Cindy — `85e1f0e8-790e-4161-a82d-373836bfe5cc` — https://d8j0ntlcm91z4.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/hf_20260812_231712_85e1f0e8-790e-4161-a82d-373836bfe5cc.mp4
 
-Audio (`84327cc4-8a03-4324-84be-f52afe233a76`) generated via `generate_audio`, model `seed_audio`, voice_type `element`, voice_id `28d6f3c4-28cb-4a88-aa66-468312e60d27` (Cindy-Voice-2), prompt = her line text directly — no recorded-performance source, so no pitch-contour inheritance. Same image (`42b7c05b...`) as attempts 9-10. Not yet visually/audibly confirmed by the user. **Note:** if this is confirmed good, Debbie's and Steve's attempt-7 dialogue clips (built via the same `voice_change`-from-recording technique) may need the same fix — they haven't been reported as sounding wrong, but weren't specifically scrutinized for pitch either.
+Audio (`84327cc4-8a03-4324-84be-f52afe233a76`) generated via `generate_audio`, model `seed_audio`, voice_type `element`, voice_id `28d6f3c4-28cb-4a88-aa66-468312e60d27` (Cindy-Voice-2), prompt = her line text directly — no recorded-performance source, so no pitch-contour inheritance. Same image (`42b7c05b...`) as attempts 9-10. **Confirmed fixed by the user** — user then asked to check Debbie and Steve for the same pitch problem.
 
-**Scene 4 dialogue — final set to use:** Cindy `2f957eb5...` (attempt 10), Debbie `abec782c...` (attempt 7), Steve `95118cc7...` (attempt 7), Michael `429fe422...` (attempt 6).
+**Dialogue video clips — Debbie/Steve pitch fix (attempt 8 for each, current):**
+8. Debbie — `7b9598c6-2bbf-456b-a032-3e3b9cb0b222` — https://d8j0ntlcm91z4.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/hf_20260812_232322_7b9598c6-2bbf-456b-a032-3e3b9cb0b222.mp4
+9. Steve — `3a94111c-cd09-403b-87ae-3ea703ad5d3e` — https://d8j0ntlcm91z4.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/hf_20260812_232323_3a94111c-cd09-403b-87ae-3ea703ad5d3e.mp4
+
+Same fix applied preemptively: `seed_audio` direct TTS instead of `voice_change` from the recorded reading. Debbie audio `a168b0f5-075e-46b8-8fea-0adfff5fb470` (voice `4035a2e6...`), Steve audio `664c65e6-50fe-4391-b0f8-c3aa93a55e3c` (voice `4554f8fb...`), both built on their already-confirmed-good close-up images (Debbie `74a0d9d7...`, Steve `5325e3cc...`, both from attempt 7). Not yet visually/audibly confirmed by the user — Steve's pitch was plausibly fine either way (male reading → male clone, similar range) but rebuilt for consistency/safety.
+
+**Scene 4 dialogue — final set to use:** Cindy `85e1f0e8...` (attempt 11, **confirmed**), Debbie `7b9598c6...` (pitch-fix), Steve `3a94111c...` (pitch-fix), Michael `429fe422...` (attempt 6, not yet re-checked for pitch — built via `voice_change` from the user's own reading, same technique that caused Cindy's issue, but Michael-to-Michael conversion so likely fine).
 
 **Going forward, use these confirmed real-photo identity anchors for any future Cindy/Debbie/Steve/Michael face-fix work:** Cindy-Real-UserConfirmed (`fc0f0579-4380-4d07-b02b-d77e647e1d6f`), Debbie-Arborist (`24deec5c-9272-4c4b-b013-7060400235fe`), Steve-Arborist (`17067706-b952-4945-9101-752b7f4505b2`), Michael-Arborist (`cd90f8bb-0a64-4f6f-8f5b-d1c486b632ab`) or Michael1 (`dc054a58-467c-4599-8ad7-0d25a0b56235`). Prefer editing an existing correctly-composed scene image (real outfit/background) with "change only the face to match <<<element>>>" over generating a fresh portrait from scratch.
 
