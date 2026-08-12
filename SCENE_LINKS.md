@@ -50,7 +50,15 @@ Confirmed correct by the user on 2026-08-11 — this is the real numbering.
 - Debbie: "I thought for sure he would be here. He is always here!"
 - Steve: "I feel like we have looked everywhere. Where else can he be?"
 - Michael: "Wait, of course, I know where he is. It is going to be a long trip so we need to change clothes."
-- Ending: cut back to the group in their hotel-arrival pose/framing, they throw up their hands, a flash of light transforms them into superhero costumes (tights and capes; Debbie and Cindy slim but busty), they look up, raise one hand to the sky, then blast off upward with matching audio. **Transformation clip (3) and blast-off clip (6) built; dialogue clips' audio uploaded and split, voice conversion in progress.**
+- Ending: cut back to the group in their hotel-arrival pose/framing, they throw up their hands, a flash of light transforms them into superhero costumes (tights and capes; Debbie and Cindy slim but busty), they look up, raise one hand to the sky, then blast off upward with matching audio. **Transformation clip (3) and blast-off clip (6) built.**
+
+**Dialogue audio (voice-converted, ready for lip-synced video generation):**
+- Cindy: `56f9787a-4aec-48b0-add7-076ac9506680` — user's recorded line run through `voice_change` with Cindy-2's clone voice (`62792e14-4627-42b2-8f45-d18c82116987`), preserving the user's original timing/emotion.
+- Debbie: `a4980c4a-31c4-453f-99c5-a7b18dbb999e` — same technique, Debbie's clone voice (`4035a2e6-5c8d-475f-81a5-7a5affb9ccb8`).
+- Steve: `df896333-2d09-4b9f-a537-bb5cd55789bc` — same technique, Steve's clone voice (`4554f8fb-4340-452f-902e-c00936d9b476`).
+- Michael: `05ee7afa-29f9-42e4-8b87-456950c1ed25` — user's own recorded line, unconverted (Michael is the user's own likeness/voice).
+- Technique: each line was wrapped in a silent placeholder video (`ffmpeg -f lavfi color=black` + the audio), run through `voice_change` (video-based, preserves timing/performance unlike text-to-speech), then the converted audio track was extracted back out via `ffmpeg -vn`.
+- Next: generate the four lip-synced dialogue clips (each character in front of the hotel, using this audio as sync reference) — not yet built.
 - User will record reference audio (for emotion/intonation) before the four dialogue clips are generated.
 
 ## Revision history (Scene 2, kitchen)
