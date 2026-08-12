@@ -89,7 +89,14 @@ Fixed differently for each: **Michael** — kept his accepted face (element Mich
 
 User's pasted photo uploaded and saved as new reference element **Cindy-Real-UserConfirmed** (`fc0f0579-4380-4d07-b02b-d77e647e1d6f`) — the actual ground truth. This also confirmed the naming of the pre-existing "-Arborist" reference elements (Cindy-Arborist, Debbie-Arborist, Steve-Arborist, Michael-Arborist, created 2026-08-09): they are a matched set of real confirmed photos from the same tree-arborist photoshoot, one per character — the correct identity anchors for this whole cast. All three fixed the same way: `nano_banana_pro` edited each character's real group-photo crop (correct outfit + hotel background) to swap in the correct face — Cindy via Cindy-Real-UserConfirmed (crop `719972ac...` → `661ec101...`), Steve via **Steve-Arborist** (`17067706-b952-4945-9101-752b7f4505b2`, crop `caf62d1a...` → `5325e3cc...`), Debbie via **Debbie-Arborist** (`24deec5c-9272-4c4b-b013-7060400235fe`, crop `2b6c8bde...` → `74a0d9d7...`). Not yet visually confirmed by the user.
 
-**Scene 4 dialogue — final set to use:** Cindy `06265e36...` (attempt 7), Debbie `abec782c...` (attempt 7), Steve `95118cc7...` (attempt 7), Michael `429fe422...` (attempt 6).
+**Dialogue video clips — attempt 7 outcome:** user confirmed Steve and Debbie good; Cindy still wrong (the "Cindy-Real-UserConfirmed" element edit didn't take correctly), asked to use the **Cindy-2** trained Soul (`d0bd9737-57ea-437f-8e48-a519a79f5ffc`) instead.
+
+**Dialogue video clips — attempt 8 (Cindy only, current):**
+7. Cindy — `fd4b16c3-c25c-4c80-997e-2b4a0d3f015f` — https://d8j0ntlcm91z4.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/hf_20260812_030447_fd4b16c3-c25c-4c80-997e-2b4a0d3f015f.mp4
+
+Close-up (`736eb840...`) built with `soul_2` + `soul_id: d0bd9737...` (Cindy-2), passing her group-photo crop (`719972ac...`) as the `image` media so the Soul's face identity is applied while keeping her real outfit/background — same "identity onto real crop" pattern used for Steve/Debbie/Michael, but with the Cindy-2 Soul as the identity source instead of a reference element. Not yet visually confirmed by the user.
+
+**Scene 4 dialogue — final set to use:** Cindy `fd4b16c3...` (attempt 8), Debbie `abec782c...` (attempt 7), Steve `95118cc7...` (attempt 7), Michael `429fe422...` (attempt 6).
 
 **Going forward, use these confirmed real-photo identity anchors for any future Cindy/Debbie/Steve/Michael face-fix work:** Cindy-Real-UserConfirmed (`fc0f0579-4380-4d07-b02b-d77e647e1d6f`), Debbie-Arborist (`24deec5c-9272-4c4b-b013-7060400235fe`), Steve-Arborist (`17067706-b952-4945-9101-752b7f4505b2`), Michael-Arborist (`cd90f8bb-0a64-4f6f-8f5b-d1c486b632ab`) or Michael1 (`dc054a58-467c-4599-8ad7-0d25a0b56235`). Prefer editing an existing correctly-composed scene image (real outfit/background) with "change only the face to match <<<element>>>" over generating a fresh portrait from scratch.
 
