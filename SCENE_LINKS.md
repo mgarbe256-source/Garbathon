@@ -16,7 +16,7 @@ Confirmed correct by the user on 2026-08-11 — this is the real numbering.
 | Scene 1 | https://d2ol7oe51mr4n9.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/6fc59d66-bba7-4e20-b3e2-56846fbdbcdd.mp4 | Confirmed correct by user. Teleport-out reportedly has a good sound effect already. |
 | Scene 2 | https://d2ol7oe51mr4n9.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/0e130563-94f6-4fa3-a4f5-df624920ab26.mp4 | Kitchen scene. **Current final** — teleport-in and teleport-out were both silent; regenerated both with a whoosh-of-air sound effect and spliced back around the untouched original dialogue segment. Original (silent teleports) version: `fa3a320e-ad62-4ae6-ba5f-58832a3e1d62`. |
 | Scene 3 | https://d2ol7oe51mr4n9.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/84a34caf-a7c7-41d9-9cb3-950a9260495d.mp4 | Golf course scene. **Current final** — rebuilt both teleport clips from scratch using a new technique (reverse-generation for the exit, see revision 10 below) to get natural motion without the squish. **Not yet visually confirmed by the user.** Soul `109038a8-af80-46fd-b663-11dddd1334d9` (informally "Cindy-3") remains her correct identity throughout. |
-| Scene 4 | *in progress — see revision history below* | Marriott Pinnacle hotel arrival, Vancouver. Teleport-in clip confirmed good by the user on 2026-08-12. Dialogue and the superhero-costume-change/sky-burst ending are being scripted next; not yet assembled into a full scene. |
+| Scene 4 | *in progress — see revision history below* | Marriott Pinnacle hotel arrival, Vancouver. Teleport-in, costume-transformation, and sky-burst clips built; dialogue clips still pending user's recorded audio. Not yet assembled into a full scene. |
 
 ## Revision history (Scene 3, golf course)
 
@@ -39,14 +39,17 @@ Confirmed correct by the user on 2026-08-11 — this is the real numbering.
 ## Revision history (Scene 4, hotel arrival)
 
 1. `fb823e46-b721-4574-b3e8-13ab50de5f7a` — teleport-in clip. https://d8j0ntlcm91z4.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/hf_20260811_221539_fb823e46-b721-4574-b3e8-13ab50de5f7a.mp4 — Steve, Debbie, Michael, and Cindy (Cindy-2 soul) arrive via raven-flock teleport in front of the Marriott Pinnacle, looking around surprised at their west-coast-casual/flashy-gay outfits. Built with `kling3_0`, empty→populated direction (start_image `93d53018-583f-4514-aad4-bffc76b1cab9`, end_image `8b11387a-8a66-4d85-b965-0058bfa6f98d`, both 16:9 via `outpaint_image`), continuing the raven transition from the end of Scene 3. **Confirmed good by the user.**
+2. Superhero costume reference image `e64d4229-fa03-4c6e-95f9-e2e36295a1b1` — https://d8j0ntlcm91z4.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/hf_20260812_000634_e64d4229-fa03-4c6e-95f9-e2e36295a1b1.png — `nano_banana_2` edit of the hotel-arrival composite (`8b11387a...`), changing only clothing to superhero tights/capes (Debbie and Cindy slim but busty), faces/poses/background locked. **Confirmed good by the user.**
+3. `4f562be7-0111-4672-8e4f-558973587fd4` — transformation clip. https://d8j0ntlcm91z4.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/hf_20260812_001554_4f562be7-0111-4672-8e4f-558973587fd4.mp4 — group throws hands up, flash of light, reveals superhero costumes. `kling3_0`, start_image `8b11387a...` (hotel-arrival pose) → end_image `e64d4229...` (superhero costumes), 16:9, 6s, native audio (whoosh building to heroic chime). Not yet visually confirmed by the user.
+4. `e13a9862-6c07-404b-99db-9318e6b2036c` — sky-burst clip. https://d2ol7oe51mr4n9.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/e13a9862-6c07-404b-99db-9318e6b2036c.mp4 — group nods to each other then bursts upward into the sky. Built via the reverse-generation technique (same as Scene 3 revision 10): generated the reliable empty→populated direction first (`95cccd62-489f-4b4d-aa77-6f96948e3b6a`, a light-streak descending from the sky and landing as the superhero group, start_image `93d53018...` empty establishing shot → end_image `e64d4229...` superhero group), then reversed video+audio with `ffmpeg -vf reverse -af areverse` to get the actual ascend-and-vanish effect, re-uploaded via `media_upload`. Not yet visually confirmed by the user.
 
-**Script (confirmed 2026-08-12, not yet built):**
+**Script (confirmed 2026-08-12):**
 - Cindy: "I don't see him anywhere."
 - Debbie: "I thought for sure he would be here. He is always here!"
 - Steve: "I feel like we have looked everywhere. Where else can he be?"
 - Michael: "Wait, of course, I know where he is. It is going to be a long trip so we need to change clothes."
-- Ending: cut back to the group in their hotel-arrival pose/framing, they throw up their hands, a flash of light transforms them into superhero costumes (tights and capes; Debbie and Cindy slim but busty), they glance at each other and nod approvingly, then burst upward into the sky with matching audio.
-- User will record reference audio (for emotion/intonation) before generation.
+- Ending: cut back to the group in their hotel-arrival pose/framing, they throw up their hands, a flash of light transforms them into superhero costumes (tights and capes; Debbie and Cindy slim but busty), they glance at each other and nod approvingly, then burst upward into the sky with matching audio. **Transformation and sky-burst clips built (see 3-4 above); dialogue clips still pending.**
+- User will record reference audio (for emotion/intonation) before the four dialogue clips are generated.
 
 ## Revision history (Scene 2, kitchen)
 
