@@ -47,11 +47,13 @@ actually be Debbie's).
 ## Voices
 
 Custom voice clones (`voice_type: element`) are capped at 3 slots on this account,
-already full: Steve, Debbie, Cindy-2. No delete-voice tool is available to me, so
-per user decision on 2026-08-11, Richard and Ilana use stock **preset** voices
-instead of clones for now (skip cloning; revisit later if a slot opens up or the
-plan is upgraded). Two clean single-speaker audio clips were already extracted
-from their shared conversation recording and confirmed as media (Ilana's clip
+full: Steve, Debbie, Cindy-Voice-2. No delete-voice tool is available to me — when
+a slot needed freeing on 2026-08-12 (Cindy's original clone had stopped sounding
+like her), the user deleted the old clone directly in the Higgsfield app. Per user
+decision on 2026-08-11, Richard and Ilana use stock **preset** voices instead of
+clones for now (skip cloning; revisit later if a slot opens up or the plan is
+upgraded). Two clean single-speaker audio clips were already extracted from their
+shared conversation recording and confirmed as media (Ilana's clip
 `dee2d57b-cff9-4135-b66c-6cb76bf249a9`, ~32.5s; Richard's clip
 `7d7f8167-66cb-4bd7-9f13-f9faf5bbb9d4`, ~50.7s) in case cloning is revisited later.
 
@@ -59,6 +61,15 @@ from their shared conversation recording and confirmed as media (Ilana's clip
 |---|---|---|---|
 | Steve | Steve (clone) | `4554f8fb-4340-452f-902e-c00936d9b476` | element |
 | Debbie | Debbie (clone) | `4035a2e6-5c8d-475f-81a5-7a5affb9ccb8` | element |
-| Cindy | Cindy-2 (clone) | `62792e14-4627-42b2-8f45-d18c82116987` | element |
+| Cindy | ~~Cindy-2~~ **Cindy-Voice-2** (clone) | ~~`62792e14-4627-42b2-8f45-d18c82116987`~~ **`28d6f3c4-28cb-4a88-aa66-468312e60d27`** | element |
 | Richard | Archie (preset) | `bd072316-f77c-588b-b6e5-e46b9b03d008` | preset |
 | Ilana | Helena (preset) | `3c2b83c0-2e0a-5ae8-998a-a5fe71b7eccd` | preset |
+
+**2026-08-12:** the original Cindy-2 voice clone stopped producing audio that
+sounded like her (root cause unknown — same voice_id, same technique that worked
+for Steve/Debbie). User provided a fresh source video (`IMG_3580.mov`, 16.6s
+clean single-speaker audio) to re-clone from. Old clone deleted by the user in
+the Higgsfield app to free the capped slot; new clone **Cindy-Voice-2**
+(`28d6f3c4-28cb-4a88-aa66-468312e60d27`) created from that video and confirmed
+`completed`/`is_audio_eligible`. **Use this voice_id for all future Cindy
+generations — the old `62792e14...` id no longer exists.**

@@ -101,9 +101,16 @@ Close-up (`736eb840...`) built with `soul_2` + `soul_id: d0bd9737...` (Cindy-2),
 **Dialogue video clips — attempt 9 (Cindy only, current):**
 7. Cindy — `eb59919d-c571-4e08-b0d5-f49bde8d0881` — https://d8j0ntlcm91z4.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/hf_20260812_225458_eb59919d-c571-4e08-b0d5-f49bde8d0881.mp4
 
-Used the user's posted image (imported as `42b7c05b-cb04-476e-8596-3cf513389cfc`) directly as `wan2_7`'s `start_image` — no face-fix edit step, since the image was already correctly composed (right face, floral dress, real Marriott Pinnacle signage) — plus the fresh voice-converted audio `1813112f...`. Not yet visually confirmed by the user.
+Used the user's posted image (imported as `42b7c05b-cb04-476e-8596-3cf513389cfc`) directly as `wan2_7`'s `start_image` — no face-fix edit step, since the image was already correctly composed (right face, floral dress, real Marriott Pinnacle signage) — plus the fresh voice-converted audio `1813112f...`.
 
-**Scene 4 dialogue — final set to use:** Cindy `eb59919d...` (attempt 9), Debbie `abec782c...` (attempt 7), Steve `95118cc7...` (attempt 7), Michael `429fe422...` (attempt 6).
+**Dialogue video clips — attempt 9 outcome:** user reported the voice itself still didn't sound like Cindy (separate from the earlier face problem), suspected the voice clone was broken, and provided a fresh source video (`IMG_3580.mov`) to re-clone from. Custom voice clones are capped at 3 slots (already full: Steve, Debbie, old Cindy-2) with no delete-voice tool available to me — user deleted the old Cindy-2 clone directly in the Higgsfield app to free the slot. New clone **Cindy-Voice-2** created (`28d6f3c4-28cb-4a88-aa66-468312e60d27`, see CHARACTERS.md) from the fresh video's audio (16.6s clean single-speaker, extracted via `ffmpeg`). Re-ran `voice_change` on Cindy's raw recorded line with the new clone, extracted the converted audio (`3c782e15-148a-4004-8bed-a4bd34c7bc0f`).
+
+**Dialogue video clips — attempt 10 (Cindy only, current):**
+7. Cindy — `2f957eb5-ac7c-4492-8d70-fb9e30cfd5a4` — https://d8j0ntlcm91z4.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/hf_20260812_231043_2f957eb5-ac7c-4492-8d70-fb9e30cfd5a4.mp4
+
+Same image (`42b7c05b...`) as attempt 9, now paired with the new-voice-clone audio (`3c782e15...`). Not yet visually/audibly confirmed by the user.
+
+**Scene 4 dialogue — final set to use:** Cindy `2f957eb5...` (attempt 10), Debbie `abec782c...` (attempt 7), Steve `95118cc7...` (attempt 7), Michael `429fe422...` (attempt 6).
 
 **Going forward, use these confirmed real-photo identity anchors for any future Cindy/Debbie/Steve/Michael face-fix work:** Cindy-Real-UserConfirmed (`fc0f0579-4380-4d07-b02b-d77e647e1d6f`), Debbie-Arborist (`24deec5c-9272-4c4b-b013-7060400235fe`), Steve-Arborist (`17067706-b952-4945-9101-752b7f4505b2`), Michael-Arborist (`cd90f8bb-0a64-4f6f-8f5b-d1c486b632ab`) or Michael1 (`dc054a58-467c-4599-8ad7-0d25a0b56235`). Prefer editing an existing correctly-composed scene image (real outfit/background) with "change only the face to match <<<element>>>" over generating a fresh portrait from scratch.
 
