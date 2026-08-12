@@ -16,6 +16,7 @@ Confirmed correct by the user on 2026-08-11 — this is the real numbering.
 | Scene 1 | https://d2ol7oe51mr4n9.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/6fc59d66-bba7-4e20-b3e2-56846fbdbcdd.mp4 | Confirmed correct by user. Teleport-out reportedly has a good sound effect already. |
 | Scene 2 | https://d2ol7oe51mr4n9.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/0e130563-94f6-4fa3-a4f5-df624920ab26.mp4 | Kitchen scene. **Current final** — teleport-in and teleport-out were both silent; regenerated both with a whoosh-of-air sound effect and spliced back around the untouched original dialogue segment. Original (silent teleports) version: `fa3a320e-ad62-4ae6-ba5f-58832a3e1d62`. |
 | Scene 3 | https://d2ol7oe51mr4n9.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/84a34caf-a7c7-41d9-9cb3-950a9260495d.mp4 | Golf course scene. **Current final** — rebuilt both teleport clips from scratch using a new technique (reverse-generation for the exit, see revision 10 below) to get natural motion without the squish. **Not yet visually confirmed by the user.** Soul `109038a8-af80-46fd-b663-11dddd1334d9` (informally "Cindy-3") remains her correct identity throughout. |
+| Scene 4 | *in progress — see revision history below* | Marriott Pinnacle hotel arrival, Vancouver. Teleport-in clip confirmed good by the user on 2026-08-12. Dialogue and the superhero-costume-change/sky-burst ending are being scripted next; not yet assembled into a full scene. |
 
 ## Revision history (Scene 3, golf course)
 
@@ -34,6 +35,18 @@ Confirmed correct by the user on 2026-08-11 — this is the real numbering.
 10. `84a34caf-a7c7-41d9-9cb3-950a9260495d` — **current final** — user asked for a full redo with a new prompt approach. Key observation: teleport-IN (empty start_image → populated end_image) has never squished across any revision; only teleport-OUT (populated start_image → empty end_image) squishes. This suggests kling3_0 holds the *end* image faithfully but takes liberties with a complex populated *start* image during heavy motion (the raven swirl). New technique: generate the raven effect in the *reliable* direction — empty→populated, ravens gathering then bursting apart to reveal the group, same structural pattern as the smoke teleport-in — then reverse the clip (video+audio, `ffmpeg -vf reverse -af areverse`) to get the actual vanish (populated→ravens→empty) for use as the teleport-out. Both new prompts use concrete physical motion cues (weight shifts, head turns, hand/grip adjustments, breeze) instead of narrative/social language (avoiding the "friends chatting" audio-bleed problem from v9), with the "Audio:" instruction kept short and separate. Not yet visually confirmed on either motion or squish.
 
 **Naming note:** the user refers to Cindy's correct identity informally as "Cindy-3." This maps to soul_id `109038a8-af80-46fd-b663-11dddd1334d9` — NOT the reference element of the same name (`012604f1-e131-4498-a149-79853edda1e1`), which is a different, unrelated asset. Use the soul_id for any future Cindy generation.
+
+## Revision history (Scene 4, hotel arrival)
+
+1. `fb823e46-b721-4574-b3e8-13ab50de5f7a` — teleport-in clip. https://d8j0ntlcm91z4.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/hf_20260811_221539_fb823e46-b721-4574-b3e8-13ab50de5f7a.mp4 — Steve, Debbie, Michael, and Cindy (Cindy-2 soul) arrive via raven-flock teleport in front of the Marriott Pinnacle, looking around surprised at their west-coast-casual/flashy-gay outfits. Built with `kling3_0`, empty→populated direction (start_image `93d53018-583f-4514-aad4-bffc76b1cab9`, end_image `8b11387a-8a66-4d85-b965-0058bfa6f98d`, both 16:9 via `outpaint_image`), continuing the raven transition from the end of Scene 3. **Confirmed good by the user.**
+
+**Script (confirmed 2026-08-12, not yet built):**
+- Cindy: "I don't see him anywhere."
+- Debbie: "I thought for sure he would be here. He is always here!"
+- Steve: "I feel like we have looked everywhere. Where else can he be?"
+- Michael: "Wait, of course, I know where he is. It is going to be a long trip so we need to change clothes."
+- Ending: cut back to the group in their hotel-arrival pose/framing, they throw up their hands, a flash of light transforms them into superhero costumes (tights and capes; Debbie and Cindy slim but busty), they glance at each other and nod approvingly, then burst upward into the sky with matching audio.
+- User will record reference audio (for emotion/intonation) before generation.
 
 ## Revision history (Scene 2, kitchen)
 
