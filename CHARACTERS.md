@@ -13,6 +13,37 @@ whenever a new character finishes training or an identity gets corrected.
 | Richard | `c7939841-5005-4bda-81c7-51c422b98261` | ready | New character — the person Steve/Debbie/Cindy were searching for at the golf course in Scene 3, revealed to be a birthday surprise. Trained from 8 real reference photos. Personality/role not yet specified by user. Voice: preset **Archie** (`bd072316-f77c-588b-b6e5-e46b9b03d008`, voice_type `preset`) — see Voices section below. |
 | Ilana | `ce6b3565-15bd-4a9a-b771-c89808173c58` | **training** (started 2026-08-11) | Second new character — Richard's wife. Trained from 5 real reference photos (minimum for Soul training; consider adding more later if identity accuracy needs improvement). Personality/role not yet specified by user. Voice: preset **Helena** (`3c2b83c0-2e0a-5ae8-998a-a5fe71b7eccd`, voice_type `preset`) — see Voices section below. |
 
+## Reliable face-fix identity anchors (as of 2026-08-12)
+
+Soul-based generation (`soul_2` + soul_id) has repeatedly failed for close-up
+face fixes in this project — most severely, it once rendered Michael as a
+different person of a different race entirely despite using his correct
+soul_id. **Do not rely on Soul generation alone for identity-critical shots.**
+
+The reliable technique instead: take an already-correct scene image (right
+outfit/background) and edit *only the face* with `nano_banana_pro`, embedding
+one of these confirmed-real reference elements as `<<<element_id>>>` in the
+prompt (e.g. "change only her face to match <<<id>>>, keep clothing/pose/
+background unchanged"):
+
+| Character | Reference element | Element ID |
+|---|---|---|
+| Cindy | Cindy-Real-UserConfirmed | `fc0f0579-4380-4d07-b02b-d77e647e1d6f` |
+| Debbie | Debbie-Arborist | `24deec5c-9272-4c4b-b013-7060400235fe` |
+| Steve | Steve-Arborist | `17067706-b952-4945-9101-752b7f4505b2` |
+| Michael | Michael-Arborist | `cd90f8bb-0a64-4f6f-8f5b-d1c486b632ab` (or Michael1: `dc054a58-467c-4599-8ad7-0d25a0b56235`) |
+
+The "-Arborist" elements (all four, created 2026-08-09) are a matched set of
+real confirmed photos from the same tree-arborist photoshoot — one per
+character. Cindy's own Arborist photo proved unreliable in practice (still
+produced Debbie's face once), so her element was replaced with a fresh photo
+the user posted directly and confirmed on 2026-08-12; the other three
+Arborist elements remain the current best anchors for Debbie/Steve/Michael.
+Do not blindly extract a face from a previously-generated scene video as a
+"ground truth" reference — those can themselves be wrong (this happened once:
+a Scene 3 video frame believed to be Cindy's confirmed face turned out to
+actually be Debbie's).
+
 ## Voices
 
 Custom voice clones (`voice_type: element`) are capped at 3 slots on this account,
