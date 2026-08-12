@@ -61,13 +61,15 @@ Confirmed correct by the user on 2026-08-11 — this is the real numbering.
 
 **Dialogue video clips — attempt 1 (wrong, not used):** `9ce73ad5...`, `062f5a74...`, `caf50359...`, `11163362...` — all four wrongly used the wide 4-person group composite as start_image instead of an individual close-up. Superseded by attempt 2 below; do not use.
 
-**Dialogue video clips — attempt 2 (current, close-ups):**
-7. Cindy — `edfff56d-302d-419e-8ba8-c802fd997801` — https://d8j0ntlcm91z4.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/hf_20260812_012158_edfff56d-302d-419e-8ba8-c802fd997801.mp4
-8. Debbie — `b904e71a-61c5-4536-aace-107a646ccd19` — https://d8j0ntlcm91z4.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/hf_20260812_013551_b904e71a-61c5-4536-aace-107a646ccd19.mp4
-9. Steve — `19032942-a642-45e0-b00d-a0d2ee6a1679` — https://d8j0ntlcm91z4.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/hf_20260812_012159_19032942-a642-45e0-b00d-a0d2ee6a1679.mp4
-10. Michael — `44282a09-23b8-42a5-a405-9f34cc21880f` — https://d8j0ntlcm91z4.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/hf_20260812_012158_44282a09-23b8-42a5-a405-9f34cc21880f.mp4
+**Dialogue video clips — attempt 2 (wrong, not used):** `edfff56d...`, `b904e71a...`, `19032942...`, `44282a09...` — close-up framing was right, but `nano_banana_pro` cropping individual people out of the 4-person group composite lost/scrambled facial identity (user reported the "Debbie" clip actually showed Cindy) and `wan2_7` produced static, non-moving mouths on these degraded source images. Superseded by attempt 3 below; do not use.
 
-Each built in two steps, matching the pattern used for earlier scenes' dialogue close-ups: (a) `nano_banana_pro` cropped/reframed the shared hotel-arrival composite (`8b11387a...`) into an individual head-and-shoulders close-up per character (Cindy `719972ac...`, Debbie `2b6c8bde...` — first attempt `a8f77114...` hung indefinitely and was abandoned/redone, Steve `caf62d1a...`, Michael `1ffe23d3...`), then (b) `wan2_7` generated the lip-synced clip from that close-up as start_image + the character's voice-converted audio as `audio_references`. 16:9, durations 4/4/5/7s matching each line's length. Not yet visually confirmed by the user.
+**Dialogue video clips — attempt 3 (current):**
+7. Cindy — `fd106e02-fa90-4405-aa21-f0dfbae27f3c` — https://d8j0ntlcm91z4.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/hf_20260812_015343_fd106e02-fa90-4405-aa21-f0dfbae27f3c.mp4
+8. Debbie — `a99efb3b-4793-4fa2-87b1-fb2d3e70cab9` — https://d8j0ntlcm91z4.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/hf_20260812_015343_a99efb3b-4793-4fa2-87b1-fb2d3e70cab9.mp4
+9. Steve — `2bab12ce-653f-4a95-9b02-525b60512ed0` — https://d8j0ntlcm91z4.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/hf_20260812_015343_2bab12ce-653f-4a95-9b02-525b60512ed0.mp4
+10. Michael — `503dbe1a-2576-4a4d-b041-bfb2a6ac031e` — https://d8j0ntlcm91z4.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/hf_20260812_015343_503dbe1a-2576-4a4d-b041-bfb2a6ac031e.mp4
+
+Fixed by generating each close-up directly from the character's trained Soul (`soul_2` + soul_id) instead of cropping the group photo — guarantees correct identity, matching the reliable method used elsewhere in this project. Close-up source images: Cindy `202b1c6d...` (soul `d0bd9737...` Cindy-2), Debbie `100dfd02...` (soul `52c6956c...`), Steve `1a52b6cd...` (soul `00ee0321...`), Michael `9898e89a...` (soul `1d71accb...`). Cindy and Debbie's faces spot-checked and confirmed as visually distinct correct identities. Each `wan2_7` clip built from its close-up as start_image + the character's voice-converted audio as `audio_references`. 16:9, durations 4/4/5/7s. Not yet visually confirmed by the user.
 
 **Scene 4 status:** all component clips built (teleport-in, 4 dialogue, transformation, blast-off) — not yet assembled into one final sequence.
 - User will record reference audio (for emotion/intonation) before the four dialogue clips are generated.
