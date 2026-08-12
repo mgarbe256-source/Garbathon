@@ -108,7 +108,14 @@ Used the user's posted image (imported as `42b7c05b-cb04-476e-8596-3cf513389cfc`
 **Dialogue video clips — attempt 10 (Cindy only, current):**
 7. Cindy — `2f957eb5-ac7c-4492-8d70-fb9e30cfd5a4` — https://d8j0ntlcm91z4.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/hf_20260812_231043_2f957eb5-ac7c-4492-8d70-fb9e30cfd5a4.mp4
 
-Same image (`42b7c05b...`) as attempt 9, now paired with the new-voice-clone audio (`3c782e15...`). Not yet visually/audibly confirmed by the user.
+Same image (`42b7c05b...`) as attempt 9, now paired with the new-voice-clone audio (`3c782e15...`).
+
+**Dialogue video clips — attempt 10 outcome:** user reported the voice was now too deep / still didn't sound like her, and pointed out Scenes 2 and 3 sounded right. Root cause: Scene 4's dialogue audio was built via `voice_change` on the user's own recorded reading of Cindy's line (to preserve his performance/timing) — `voice_change` converts timbre but keeps the source's pitch contour, so a male reading converted to a female clone comes out unnaturally deep. Scenes 2/3 instead used direct `seed_audio` text-to-speech in the clone's own voice, which doesn't inherit a male pitch contour. Switched back to that technique for Cindy specifically.
+
+**Dialogue video clips — attempt 11 (Cindy only, current):**
+7. Cindy — `85e1f0e8-790e-4161-a82d-373836bfe5cc` — https://d8j0ntlcm91z4.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/hf_20260812_231712_85e1f0e8-790e-4161-a82d-373836bfe5cc.mp4
+
+Audio (`84327cc4-8a03-4324-84be-f52afe233a76`) generated via `generate_audio`, model `seed_audio`, voice_type `element`, voice_id `28d6f3c4-28cb-4a88-aa66-468312e60d27` (Cindy-Voice-2), prompt = her line text directly — no recorded-performance source, so no pitch-contour inheritance. Same image (`42b7c05b...`) as attempts 9-10. Not yet visually/audibly confirmed by the user. **Note:** if this is confirmed good, Debbie's and Steve's attempt-7 dialogue clips (built via the same `voice_change`-from-recording technique) may need the same fix — they haven't been reported as sounding wrong, but weren't specifically scrutinized for pitch either.
 
 **Scene 4 dialogue — final set to use:** Cindy `2f957eb5...` (attempt 10), Debbie `abec782c...` (attempt 7), Steve `95118cc7...` (attempt 7), Michael `429fe422...` (attempt 6).
 
