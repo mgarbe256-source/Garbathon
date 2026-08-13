@@ -28,7 +28,7 @@ background unchanged"):
 
 | Character | Reference element | Element ID |
 |---|---|---|
-| Cindy | Cindy-Real-UserConfirmed | `fc0f0579-4380-4d07-b02b-d77e647e1d6f` |
+| Cindy | ~~Cindy-Real-UserConfirmed~~ **Cindy-Portrait-2** | ~~`fc0f0579-4380-4d07-b02b-d77e647e1d6f`~~ **`ce1b165a-339a-43f3-9b98-7608d8c23e97`** |
 | Debbie | Debbie-Arborist | `24deec5c-9272-4c4b-b013-7060400235fe` |
 | Steve | Steve-Arborist | `17067706-b952-4945-9101-752b7f4505b2` |
 | Michael | Michael-Arborist | `cd90f8bb-0a64-4f6f-8f5b-d1c486b632ab` (or Michael1: `dc054a58-467c-4599-8ad7-0d25a0b56235`) |
@@ -96,10 +96,26 @@ All 6 images are uploaded and confirmed in the Higgsfield media library:
 | Turnaround angle 4 | `25cb850e-7d99-4ab4-9da6-d23b7d543541` |
 
 `show_characters(action='train', ...)` failed repeatedly ("Something went
-wrong") on 2026-08-12 across 6 attempts with varied inputs (media_id array,
+wrong") on 2026-08-12/13 across 8 attempts with varied inputs (media_id array,
 https URL array, `medias` array, different character names, fewer images) —
 while `list`, `balance`, and `media_confirm` all worked normally in between.
 This points to a transient outage in the Soul-training endpoint itself, not
-a problem with the images. **Next step: retry `show_characters(action='train',
-name=..., images=[the 6 media_ids above])` once the endpoint recovers** — no
-need to re-upload anything.
+a problem with the images. If it needs to be retried later,
+`show_characters(action='train', name=..., images=[the 6 media_ids above])`
+is ready to go with no re-upload needed.
+
+**Resolved 2026-08-13 via a different mechanism — bypassed Soul training
+entirely.** Created a single-image reference **element** from the portrait
+instead: **Cindy-Portrait-2** (`ce1b165a-339a-43f3-9b98-7608d8c23e97`,
+`show_reference_elements` action=create, source media
+`dfe5147e-f885-48c6-8754-b1fa6b2a418c`). Used the established "identity onto
+real crop" technique — `nano_banana_pro` editing Cindy's already-correct
+scene image with `<<<Cindy-Portrait-2>>>` embedded — to produce a fresh,
+evenly-lit close-up, then animated that with `wan2_7`. This fixed both the
+face identity and the lip-sync problem that persisted even when using
+Cindy's raw real photo directly (root cause of the lip-sync failure was
+likely animation-model sensitivity to the photo's lighting/angle, not
+identity). **User confirmed: "face and lip-sync look good."**
+**Cindy-Portrait-2 is now the primary identity anchor for Cindy** — supersedes
+Cindy-Real-UserConfirmed (`fc0f0579-4380-4d07-b02b-d77e647e1d6f`) in the
+table below, which repeatedly failed to produce a correct likeness.
