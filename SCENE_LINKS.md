@@ -233,6 +233,14 @@ Built in two steps: (1) added a champagne glass to each of the six people's hand
 
 **FINAL DECISION (2026-08-14): reverted to the very first transformation clip, feet issue accepted as-is.** Per explicit user instruction ("go back to the first transition video even if Steve and Debbie's feet disappear"), **current final is `56ac6686-611c-48f3-a0ae-061119e7f679`** — https://d8j0ntlcm91z4.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/hf_20260814_004113_56ac6686-611c-48f3-a0ae-061119e7f679.mp4 — `kling3_0`, `std` mode, start_image `afe931fb...` → end_image `47305228...`, no camera-lock or stand-still language. **Known issue, accepted:** Steve and Debbie's feet disappear during the transition (they walk forward). Every other attempted fix (prompt tweaks, `mode: "pro"`, grounded/shadowed composites, manual no-motion crossfade) is superseded — do not revisit this specific problem unless the user raises it again.
 
+**Ilana close-up dialogue (2026-08-15):** first reaction line for Richard and Ilana, spoken right after they see the four heroes' superhero costumes — "And what are you wearing?" in a happy/surprised tone. Built with Ilana's new real voice clone (`13a4e601-3d28-4ac6-b387-e1d1e4bccd80`, see CHARACTERS.md) rather than the old preset voice.
+
+Source image: literal pixel crop of Ilana's head/shoulders from the confirmed Scene 5 background composite (`6442b835-f4ed-4b45-bf50-ae5c32fb1373`, 1376x768) — same "real crop, no Soul regeneration" technique used for Steve/Michael, chosen to avoid identity drift. Native crop was only 140x175, so `bytedance_image_upscale` (2k target) was used to reach animatable resolution — a ~15.4x upscale, more aggressive than ideal (Michael's forehead-seam lesson came from a similarly aggressive upscale), so watch for softness/artifacts on review. Audio: `generate_audio` (`seed_audio`, Ilana's clone, `expression_intensity: 8, mood: 5`), 2.4s.
+
+Hit the same `wan2_7` aspect-ratio bug documented elsewhere in this file (Cindy's and Michael's clips): first `generate_video` call with no explicit `aspect_ratio` defaulted to a stretched 16:9 (`d152fa28-9a27-4cf5-81e2-258a7d50d0ea` — discarded, do not use). Fixed by re-running with `aspect_ratio: "4:5"` (server snapped to the closest supported "3:4").
+
+**CURRENT FINAL, pending user visual confirmation:** `5bff2266-f610-4d6e-a0d6-7bc8f2e61aa6` — https://d8j0ntlcm91z4.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/hf_20260815_221149_5bff2266-f610-4d6e-a0d6-7bc8f2e61aa6.mp4 (858x1072, 5.039s, has audio). Not yet confirmed by the user — flag the aggressive upscale when asking for review. Placement in the Scene 5 timeline: right after the landing/reveal, as the first spoken line from Richard/Ilana's reaction, before Debbie's line.
+
 ## Title / graphic assets
 
 Non-scene assets kept for later use in the final edit.

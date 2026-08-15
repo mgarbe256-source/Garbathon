@@ -81,7 +81,10 @@ by network policy — see session notes if revisited). Confirmed media
 `0c5ffd8b-c56f-4a73-92dd-1970e0cad40e` (18.65s). Cloned via
 `create_voice_from_confirmed_audio` — **Ilana** (`13a4e601-3d28-4ac6-b387-e1d1e4bccd80`,
 named "Ilana-2" internally by Higgsfield), `completed`/`is_audio_eligible`.
-**Use this voice_id for all Ilana dialogue going forward.**
+**Use this voice_id for all Ilana dialogue going forward.** First dialogue clip
+built with it: her Scene 5 reaction line "And what are you wearing?" — see
+SCENE_LINKS.md's Scene 5 revision history for the clip link and build notes
+(pending user visual confirmation as of 2026-08-15).
 
 Richard still needs the same treatment — a fresh clean solo recording (his
 half of the old mixed clip is not usable) — before his clone can be created
