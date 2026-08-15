@@ -11,7 +11,7 @@ whenever a new character finishes training or an identity gets corrected.
 | Cindy (old) | `109038a8-af80-46fd-b663-11dddd1334d9` | ready, **retired** | Confirmed correct on 2026-08-11, but degraded afterward — repeatedly failed to render her face accurately in Scene 3/4 edits despite fixes. Superseded by Cindy-2 below. Do not use going forward. Two other stale "Cindy" souls also exist (`13532858-be71-47fd-b701-72f332854350`, `70ecfd95-8c7a-4daf-b7f8-7618cc2650d8`) — do not use either. |
 | **Cindy-2** | `d0bd9737-57ea-437f-8e48-a519a79f5ffc` | ready | Fresh retrain from 10 new real reference photos, replacing the old Cindy soul above after repeated identity/rendering failures. **Use this one for all future Cindy generations.** |
 | Richard | `c7939841-5005-4bda-81c7-51c422b98261` | ready | New character — the person Steve/Debbie/Cindy were searching for at the golf course in Scene 3, revealed to be a birthday surprise. Trained from 8 real reference photos. Personality/role not yet specified by user. Voice: preset **Archie** (`bd072316-f77c-588b-b6e5-e46b9b03d008`, voice_type `preset`) — see Voices section below. |
-| Ilana | `ce6b3565-15bd-4a9a-b771-c89808173c58` | **training** (started 2026-08-11) | Second new character — Richard's wife. Trained from 5 real reference photos (minimum for Soul training; consider adding more later if identity accuracy needs improvement). Personality/role not yet specified by user. Voice: preset **Helena** (`3c2b83c0-2e0a-5ae8-998a-a5fe71b7eccd`, voice_type `preset`) — see Voices section below. |
+| Ilana | `ce6b3565-15bd-4a9a-b771-c89808173c58` | **training** (started 2026-08-11) | Second new character — Richard's wife. Trained from 5 real reference photos (minimum for Soul training; consider adding more later if identity accuracy needs improvement). Personality/role not yet specified by user. Voice: **Ilana (clone)** (`13a4e601-3d28-4ac6-b387-e1d1e4bccd80`, voice_type `element`, created 2026-08-15) — see Voices section below. |
 
 ## Reliable face-fix identity anchors (as of 2026-08-12)
 
@@ -46,24 +46,54 @@ actually be Debbie's).
 
 ## Voices
 
-Custom voice clones (`voice_type: element`) are capped at 3 slots on this account,
-full: Steve, Debbie, Cindy-Voice-2. No delete-voice tool is available to me — when
-a slot needed freeing on 2026-08-12 (Cindy's original clone had stopped sounding
-like her), the user deleted the old clone directly in the Higgsfield app. Per user
-decision on 2026-08-11, Richard and Ilana use stock **preset** voices instead of
-clones for now (skip cloning; revisit later if a slot opens up or the plan is
-upgraded). Two clean single-speaker audio clips were already extracted from their
-shared conversation recording and confirmed as media (Ilana's clip
-`dee2d57b-cff9-4135-b66c-6cb76bf249a9`, ~32.5s; Richard's clip
-`7d7f8167-66cb-4bd7-9f13-f9faf5bbb9d4`, ~50.7s) in case cloning is revisited later.
+Custom voice clones (`voice_type: element`) are capped at 3 slots on this account.
+No delete-voice tool is available to me — slot changes are made by the user
+directly in the Higgsfield app.
+
+**2026-08-15: Debbie's and Cindy's clones deleted by the user to free slots for
+Richard/Ilana.** Confirmed via `list_voices` — only Steve's clone remains as an
+`element` voice; Debbie's (`4035a2e6...`) and Cindy-Voice-2's (`28d6f3c4...`) ids
+**no longer exist and will fail if reused.** This means any future line for
+Debbie or Cindy cannot be regenerated with their old cloned voice until one of
+them is re-cloned into a freed slot — flag this to the user before attempting
+any new Debbie/Cindy dialogue generation. Already-generated video/audio using
+those voices is unaffected (the audio bytes are already baked in), only new
+generations are blocked. 2 of 3 slots are currently free (only Steve occupies a
+slot).
+
+Per user decision on 2026-08-11, Richard and Ilana used stock **preset** voices
+initially (skip cloning until a slot opened up or the plan was upgraded). Two
+clean single-speaker audio clips were extracted from their shared conversation
+recording, but on 2026-08-15 the user caught that **both clips actually
+contained both speakers mixed/interleaved** (a naive time-based split of a
+back-and-forth conversation, not real single-speaker audio) — confirmed by ear
+before either was used, so no bad clone was created from them. Do not reuse
+`dee2d57b-cff9-4135-b66c-6cb76bf249a9` or `7d7f8167-66cb-4bd7-9f13-f9faf5bbb9d4`
+as clone sources.
+
+**Ilana re-solved (2026-08-15):** user provided a fresh solo recording
+(`Ilana.m4a`, 73.5s) instead. It had ~55s of trailing silence after she stops
+speaking (speech only 0-18.4s) — trimmed to 18.6s and converted to mp3 (the
+raw `.m4a` was also rejected by Higgsfield's own uploader; mp3 fixed both
+issues at once) via local `ffmpeg`, sent back to the user, who uploaded it
+through the Higgsfield app directly (uploading from this session was blocked
+by network policy — see session notes if revisited). Confirmed media
+`0c5ffd8b-c56f-4a73-92dd-1970e0cad40e` (18.65s). Cloned via
+`create_voice_from_confirmed_audio` — **Ilana** (`13a4e601-3d28-4ac6-b387-e1d1e4bccd80`,
+named "Ilana-2" internally by Higgsfield), `completed`/`is_audio_eligible`.
+**Use this voice_id for all Ilana dialogue going forward.**
+
+Richard still needs the same treatment — a fresh clean solo recording (his
+half of the old mixed clip is not usable) — before his clone can be created
+in the second freed slot.
 
 | Character | Voice | voice_id | voice_type |
 |---|---|---|---|
 | Steve | Steve (clone) | `4554f8fb-4340-452f-902e-c00936d9b476` | element |
-| Debbie | Debbie (clone) | `4035a2e6-5c8d-475f-81a5-7a5affb9ccb8` | element |
-| Cindy | ~~Cindy-2~~ **Cindy-Voice-2** (clone) | ~~`62792e14-4627-42b2-8f45-d18c82116987`~~ **`28d6f3c4-28cb-4a88-aa66-468312e60d27`** | element |
-| Richard | Archie (preset) | `bd072316-f77c-588b-b6e5-e46b9b03d008` | preset |
-| Ilana | Helena (preset) | `3c2b83c0-2e0a-5ae8-998a-a5fe71b7eccd` | preset |
+| Debbie | ~~Debbie (clone)~~ **DELETED, no replacement yet** | ~~`4035a2e6-5c8d-475f-81a5-7a5affb9ccb8`~~ | ~~element~~ |
+| Cindy | ~~Cindy-Voice-2 (clone)~~ **DELETED, no replacement yet** | ~~`28d6f3c4-28cb-4a88-aa66-468312e60d27`~~ | ~~element~~ |
+| Richard | Archie (preset) | `bd072316-f77c-588b-b6e5-e46b9b03d008` | preset — clone pending, needs a clean solo recording |
+| **Ilana** | **Ilana (clone)** | **`13a4e601-3d28-4ac6-b387-e1d1e4bccd80`** | **element** |
 
 **2026-08-12:** the original Cindy-2 voice clone stopped producing audio that
 sounded like her (root cause unknown — same voice_id, same technique that worked
