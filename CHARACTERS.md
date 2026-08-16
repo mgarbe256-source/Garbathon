@@ -11,7 +11,7 @@ whenever a new character finishes training or an identity gets corrected.
 | Cindy (old) | `109038a8-af80-46fd-b663-11dddd1334d9` | ready, **retired** | Confirmed correct on 2026-08-11, but degraded afterward — repeatedly failed to render her face accurately in Scene 3/4 edits despite fixes. Superseded by Cindy-2 below. Do not use going forward. Two other stale "Cindy" souls also exist (`13532858-be71-47fd-b701-72f332854350`, `70ecfd95-8c7a-4daf-b7f8-7618cc2650d8`) — do not use either. |
 | **Cindy-2** | `d0bd9737-57ea-437f-8e48-a519a79f5ffc` | ready | Fresh retrain from 10 new real reference photos, replacing the old Cindy soul above after repeated identity/rendering failures. **Use this one for all future Cindy generations.** |
 | Richard | `c7939841-5005-4bda-81c7-51c422b98261` | ready | New character — the person Steve/Debbie/Cindy were searching for at the golf course in Scene 3, revealed to be a birthday surprise. Trained from 8 real reference photos. Personality/role not yet specified by user. Voice: preset **Archie** (`bd072316-f77c-588b-b6e5-e46b9b03d008`, voice_type `preset`) — see Voices section below. |
-| Ilana | `ce6b3565-15bd-4a9a-b771-c89808173c58` | **training** (started 2026-08-11) | Second new character — Richard's wife. Trained from 5 real reference photos (minimum for Soul training; consider adding more later if identity accuracy needs improvement). Personality/role not yet specified by user. Voice: **Ilana (clone)** (`13a4e601-3d28-4ac6-b387-e1d1e4bccd80`, voice_type `element`, created 2026-08-15) — see Voices section below. |
+| Ilana | `ce6b3565-15bd-4a9a-b771-c89808173c58` | ready (finished training between 2026-08-11 and 2026-08-15) | Second new character — Richard's wife. Trained from 5 real reference photos (minimum for Soul training; consider adding more later if identity accuracy needs improvement). Personality/role not yet specified by user. Voice: **Ilana (clone)** (`13a4e601-3d28-4ac6-b387-e1d1e4bccd80`, voice_type `element`, created 2026-08-15) — see Voices section below. |
 
 ## Reliable face-fix identity anchors (as of 2026-08-12)
 
@@ -82,9 +82,12 @@ by network policy — see session notes if revisited). Confirmed media
 `create_voice_from_confirmed_audio` — **Ilana** (`13a4e601-3d28-4ac6-b387-e1d1e4bccd80`,
 named "Ilana-2" internally by Higgsfield), `completed`/`is_audio_eligible`.
 **Use this voice_id for all Ilana dialogue going forward.** First dialogue clip
-built with it: her Scene 5 reaction line "And what are you wearing?" — see
-SCENE_LINKS.md's Scene 5 revision history for the clip link and build notes
-(pending user visual confirmation as of 2026-08-15).
+built with it: her Scene 5 reaction line "And what are you wearing?" —
+**confirmed final by the user on 2026-08-16** after several fixes (Soul-generated
+portrait instead of a low-res crop, recorded-performance audio through
+`voice_change` instead of TTS, and a `wan2_7` duration fix for a nodding/no-lip-sync
+bug). See SCENE_LINKS.md's Scene 5 revision history for the full story and final
+clip link.
 
 Richard still needs the same treatment — a fresh clean solo recording (his
 half of the old mixed clip is not usable) — before his clone can be created
