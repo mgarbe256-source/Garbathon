@@ -9,6 +9,8 @@ appear in a generation history/gallery. Bookmark this file, or use the links dir
 record of every scene's current final version. It gets updated immediately whenever
 a scene changes — no separate request needed each time.
 
+**Full short, all 7 scenes stitched together (2026-08-16):** `58138f59-97af-4c98-94ed-15fcd49076a4` — https://d2ol7oe51mr4n9.cloudfront.net/user_3HZ3Ovx0vMaLGvw3wYJo7Ezbkwx/58138f59-97af-4c98-94ed-15fcd49076a4.mp4 (1280x720, 216.0s / 3:36). Scene 0 → 1 → 2 → 3 → 4 → 5 → 6, each normalized to a common 1280x720 canvas via `ffmpeg` concat. **Note:** built from whatever each scene row below pointed to at the time — if any individual scene changes again, this stitched link needs to be rebuilt to match. Scene 3 was still flagged "not yet visually confirmed by the user" as of this stitch.
+
 Confirmed correct by the user on 2026-08-11 — this is the real numbering.
 
 | Scene | Link | Notes |
